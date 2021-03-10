@@ -1,0 +1,20 @@
+#include <string>
+#include <sstream>
+#include <iomanip>
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    double param = 0.0045;
+    char value[16];
+    long   power = 0;
+    char delim = 0;
+    stringstream ss;
+    ss << scientific << param;
+    if (sscanf(ss.str().c_str(), "%[^\e]%c%d", &value, &delim, &power))
+        cout << "value : " << atof(value) << endl
+        << "power : " << power << endl;
+    cin.get();
+    return 0;
+}
