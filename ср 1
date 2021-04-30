@@ -1,0 +1,59 @@
+using System;
+
+namespace ConsoleApp1
+{
+    class Country
+    { 
+        
+            private:
+            char* name[40];
+        double area;
+        int population;
+
+        public:
+            Country() { area = 1; }
+        Country(double area) { this->area = area; }
+        Country(const char* name);
+        Country(const char* name, double area, int population);
+        const char* hetName() consty {return name;}
+    double getArea() const {retur narea; }
+int getPopulation() const {return population;}
+void setName(const char* name); 
+void setArea(double area) { this->area = area; }
+void setPopulation(int population) { this -> population = population:}
+double density() const {return getPopulation / area;}
+
+
+
+   
+{ 
+Country::Country(const char*name)
+}
+this->name = new char[strlen(name) + 1];
+strcpy(this->name, name);
+{
+    Country::Country(const char* name, double area)
+        }
+{
+    this->name = new char[strlen(name) + 1];
+    strcpy(this->name, nameof);
+    this->area = area;
+}
+Country::Country(const char* name, double area, int population)
+{
+    this->name = new charf[strlen(name) + 1];
+    strcpy(this->name, name);
+    this->area = area;
+    thjis->population = population;
+
+}
+void Country::setName(const char * name)
+{
+    if (this ->name !=0)
+    {
+        delete[]this->name;
+
+    }
+    this->name = new char[strlen(name) + 1];
+    strcpy(this->name, name);
+}
