@@ -1,0 +1,58 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime> 
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "rus");
+
+	int randomDigits[10]{};
+	int randomDigits_2[10]{};
+	int randomDigits_3[10]{};
+	int randomDigits_4[10]{};
+	float randomDigits_5[10]{}; // для чисел c плавающей точкой
+
+	srand(time(NULL));
+	for (int i = 0; i < 10; i++)
+	{
+		randomDigits[i] = 30 + rand() % 60; // 30 ... 60
+		randomDigits_2[i] = -10 + rand() % 10; // -10 ... 10
+		randomDigits_3[i] = -30 + rand() % 40; // 200 ... 300
+		randomDigits_4[i] = -10 + rand() % 10 ; // -20 ... 20
+		randomDigits_5[i] = -20 + rand() % 20;// 0.01 ... 1
+	}
+
+	cout << "Массив c числами oт 30 до 60: ";
+	for (int i = 0; i < 10; i++)
+	{
+		cout << randomDigits[i] << "  ";
+	}
+
+	cout << endl << "Массив c числами oт -10 до 10: ";
+	for (int i = 0; i < 10; i++)
+	{
+		cout << randomDigits_2[i] << "  ";
+	}
+
+	cout << endl << "Массив c числами oт -30 дo 40: ";
+	for (int i = 0; i < 10; i++)
+	{
+		cout << randomDigits_3[i] << "  ";
+	}
+
+	cout << endl << "Массив c числами oт -20 до 20: ";
+	for (int i = 0; i < 10; i++)
+	{
+		cout << randomDigits_4[i] << "  ";
+	}
+
+	cout << endl << "Массив c числами oт -20 дo 20: ";
+	for (int i = 0; i < 10; i++)
+	{
+		cout << randomDigits_5[i] << "  ";
+	}
+	cout << endl;
+
+	return 0;
+}
