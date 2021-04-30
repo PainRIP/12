@@ -1,0 +1,65 @@
+#include <iostream>
+#include <conio.h>
+#include <locale>
+
+class Complex
+{
+private:
+    float realPart, imaginaryPart; // описание класса Complex
+    int j;
+public:
+    Complex(); // конструктор
+    Complex(float real_part, float im_part); // конструктор
+    Complex operator + (Complex) const;
+    Complex operator - (Complex) const;
+
+    float getReal() { return realPart; };
+    float getIm() { return imaginaryPart; };
+    void show();
+    void input();
+
+};
+Complex Complex::operator+ (Complex d) const
+{
+    return Complex(realPart + d.getReal(), imaginaryPart + d.getIm());
+}
+Complex Complex::operator- (Complex d) const
+{
+    return Complex(realPart - d.getReal(), imaginaryPart - d.getIm());
+}
+Complex::Complex() // определение конструктора
+{
+    realPart = 0;
+    imaginaryPart = 0;
+}
+
+Complex::Complex(float real_part, float im_part) // определение конструктора
+{
+    realPart = real_part;
+    imaginaryPart = im_part;
+}
+
+void Complex::input() // описание функции input
+{
+    std::cout << "Введите действительную часть комплекстного числа\n";
+    std::cin >> realPart;
+    std::cout << "Введите мнимую часть комплексного числа \n";
+    std::cin >> imaginaryPart;
+}
+
+void Complex::show()
+{
+    printf_s("(%.3f+%.3f*j)\n", realPart, imaginaryPart);
+}
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+    Complex a, b, c, d;
+    a.input();
+    b.input();
+    c = a + b;
+    d = a - b;
+    c.show();
+    d.show();
+    return 0;
+}
