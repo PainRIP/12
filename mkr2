@@ -1,0 +1,33 @@
+using System;
+
+namespace mkr2
+{
+    struct User
+    {
+        public string name;
+        public string name2;
+        public string name3;
+        public string name4;
+
+        public void DisplayInfo()
+        {
+            Console.WriteLine($"Name: {name}  name2: {name2} name3: {name3}");
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            User tom;
+            tom.name = "Computer: Procesor Intel Core i5 6600k , 3.5 GHz Price: 150$";
+            tom.name2 = "Mouse: Optica , number of buttons: 5 , Price: 50$";
+            tom.name3 = "Monitor: dyagonal 23 , FHD 1920x1080 , price: 200$";
+            tom.name4 = "All Price: 400$";
+            tom.DisplayInfo();
+
+            Console.ReadKey();
+        }
+       
+    }
+}
