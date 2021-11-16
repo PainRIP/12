@@ -1,0 +1,36 @@
+using System;
+
+namespace ConsoleApp1
+{
+    class Time
+    {
+        int hour;
+        int min;
+        int sec;
+        public Time()
+        {
+            hour = min = sec = 0;
+        }
+        public Time(int hour)
+        {
+            this.hour = hour;
+            min = sec = 0;
+        }
+        public Time(int hour, int min)
+        {
+            this.hour = hour;
+            this.min = min;
+            sec = 0;
+        }
+        public Time(int hour, int min, int sec)
+        {
+            this.hour = hour;
+            this.min = min;
+            this.sec = sec;
+        }
+        public int GetHour() { return hour; }
+        public int GetMin() { return min; }
+        public int GetSec() { return sec; }
+
+    }
+}
