@@ -1,0 +1,20 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplication3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double x, y;
+            Console.WriteLine("Введите значение x");
+            x = double.Parse(Console.ReadLine());
+            y = 3.14 + Math.Log(4.0 / 7.0 - ((Math.Sin(Math.Atan(x)) / 2.0)));
+            Console.WriteLine(" x = {0} \t y = {1} ", x, y);
+            Console.ReadKey();
+        }
+    }
+}
