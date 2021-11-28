@@ -1,0 +1,47 @@
+using System;
+
+namespace ConsoleApp15
+{
+    class A
+    {
+        protected A
+            protected internal int AA;
+    }
+    class B : A 
+    {
+      protected B
+      protected internal int BB;
+      public void MethodB()
+        {
+            A = 25;
+            AA = 30;
+        }
+    }
+    class C : B
+    {
+        protected C
+        protected internal int CC;
+        public void MethodC()
+        {
+            A = 10;
+            AA = 20;
+            B = 30;
+            BB = 40;
+        }
+    }
+    class Program
+    {
+        static void Main(string[]args)
+        {
+            A objA = new A();
+            B objB = new B();
+            C objC = new C();
+            objA.AA = 40;
+            objB.AA = 50;
+            objB.BB = 50;
+            objC.AA = 10;
+            objC.BB = 20;
+            objC.CC = 30;
+        }
+    }
+}
