@@ -1,0 +1,22 @@
+using System;
+
+namespace ConsoleApp16
+{
+    interface MyInterface1
+    {
+        void Method();
+    }
+    class MyClass : MyInterface1
+    {
+        void MyInterface1.Method()
+        {
+            return;
+        }
+        void InternalMethod()
+        {
+            MyInterface1 mi = this;
+            mi.Method();
+            MyClass mc = this;
+        }
+    }
+}
