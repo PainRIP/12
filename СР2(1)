@@ -4,29 +4,35 @@ namespace ConsoleApp16
 {
     class B
     {
-        public const double Pi2 = 6.28;
-        public double Pi = 3.14;
-        static public void MethodB()
+        private int b = 25;
+        public virtual void Print (B refB)
         {
-            WriteLine("B.MethodB()");
+            WriteLine("Method b.Print():");
+            WriteLine("b={0}", refB.b);
         }
     }
-    class A
+    class A : B
     {
-        public void MethodA()
+        private int a = 15;
+        public override void Print(B refB)
         {
-            B.MethodB();
-            WriteLine(B.Pi2);
-            B objB = new B();
-            objB.Pi = 3.141592;
+            WriteLine("Method a.Print():");
+            base.Print(refB);
+            WriteLine("a={0}", a);
         }
+
     }
     class Program
     {
         static void Main(string[]args)
         {
             A objA = new A();
-            objA.MethodA();
+            B objB = new B();
+            B refB;
+            refB = objA;
+            refB.Print(refB);
+            refB = objB;
+            refB.Print(refB);
         }
     }
 }
