@@ -1,0 +1,18 @@
+#include <iostream>
+#include <cstdlib>
+int array[10];
+#define ARRAY_WIDTH 10
+int array[ARRAY_WIDTH];
+const int arrayWidth = 10;
+int array[arrayWidth]; 
+enum ArrayElements
+{
+    MIN_ARRAY_WIDTH = 0
+};
+int array[MIN_ARRAY_WIDTH];
+int width;
+std::cin >> width;
+int array[width];
+int temp = 10;
+const int width = temp;
+int array[width];
