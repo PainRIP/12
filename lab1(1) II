@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    const int arrlen = 10;
+    int arr[arrlen];
+    for(int i = 0; i < arrlen; i++)
+    {
+        arr[i] = rand()%50-12;
+    }
+    //out array
+    cout<<"arr [ ";
+    for(int i = 0; i < arrlen; i++)
+        cout<<arr[i]<<" ";
+    cout<<"]"<<endl;
+ 
+    int sump = 0;
+    int sumn = 0;
+    for(int i = 0; i < arrlen; i++)
+    {
+        if(arr[i]%2 != 0)
+            sumn += arr[i];
+        else
+            sump += arr[i];
+    }
+    cout<<"sump = "<<sump<<endl
+        <<"sumn = "<<sumn<<endl;
+    return 0;
+}
