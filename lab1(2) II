@@ -1,0 +1,15 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+ int main()
+{
+ int randomDigits[3] = {};
+  srand(time(NULL));
+ for (int i = 0; i < 3; i++)
+ {
+ randomDigits[i] = rand(); 
+ cout << randomDigits[i] << endl;
+ }
+ 
+ return 0;
+}
