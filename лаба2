@@ -1,0 +1,47 @@
+#include <iostream>
+#include <vector>
+void filling(std::vector<int>& arr) {
+	for (size_t i = 0; i < arr.size(); ++i) {
+		arr[i] = static_cast<int>(rand() % 20);
+		std::cout<< arr[i] << " ";
+	}
+	std::cout << std::endl;
+}
+void shakerSort(std::vector<int>& arr) {
+    int control = arr.size() - 1;
+	int left  = 0;
+	int right = arr.size() - 1;
+	do {
+		for (int i = left; i < right; i++) {
+			if (arr[i] > arr[i + 1]) {
+                std::swap(arr[i], arr[i + 1]);
+                control = i;
+			}
+		}
+		right = control;
+		for (int i = right; i > left; i--) {
+			if (arr[i] < arr[i - 1]) {
+                std::swap(arr[i], arr[i - 1]);
+                control = i;
+			}
+		}
+		left = control;
+	} while (left < right);
+}
+
+int main()
+{
+	const int N = 20;
+	std::vector<int> arr;
+    arr.reserve(N);
+	for (int i = 0; i < N; i++)
+		arr.push_back(0);
+	srand(time(0));
+	filling(arr);
+	shakerSort(arr); 
+	for (int i = 0; i < arr.size(); i++) {
+		std::cout << arr[i] << " ";
+	}
+	arr.clear();
+	std::cin.ignore();
+}
